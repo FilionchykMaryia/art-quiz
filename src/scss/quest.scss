@@ -1,0 +1,238 @@
+@import '_vars';
+.quest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.quest-title {
+  color: $color;
+  text-align: center;
+  padding: 1em 0;
+}
+.picture {
+  border-radius: $radius;
+  height: 50%;
+  width: 50%;
+}
+.picture-answ{
+  border-radius: $radius;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0px 0px 19px -3px $light;
+    transition: 0.4s ease-in-out;
+  }
+}
+
+.picture-answers {
+  width: calc(46% + 0.5em);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 1em;
+  gap: 0.5em;
+  .item{
+    width: calc(38% - 1em);
+  }
+}
+
+.answers {
+  width: 52%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 1em;
+  gap: 0.5em;
+}
+
+.popup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-150%);
+  transition: all 0.8s ease 0s;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 50%;
+  height: 90%;
+  padding: 2em;
+  background-color: $light;
+  border-radius: $radius;
+  color: $dark;
+  div {
+    text-align: center;
+  }
+}
+
+.img {
+  position: relative;
+  width: 60%;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+  }
+}
+
+.indicator{
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  z-index: 3;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+}
+
+.right{
+  background-image: url('./assets/svg/correct-answer.svg');
+}
+
+.mistake{
+  background-image: url('./assets/svg/mistake-answer.svg');
+}
+
+.btn-next {
+  @include btn;
+  background-color: $color;
+  font: inherit;
+  &:hover {
+    @include btn-hover;
+    background-color: $color;
+    color: $light;
+  }
+}
+.dots {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid $color;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.fill {
+  background-color: $color;
+}
+
+@media (max-width: 1790px) {
+  .picture-answers {
+    width: calc(50% + 0.5em);
+  }
+}
+@media (max-width: 1395px) {
+  .picture-answers {
+    width: calc(60% + 0.5em);
+  }
+}
+
+@media (max-width: 1247px) {
+  .result {
+    height: 72%;
+  }
+}
+
+@media (max-width: 1148px) {
+  .picture-answers {
+    width: calc(78% + 0.5em);
+  }
+}
+
+@media (max-width: 840px) {
+  .result {
+    width: 80%;
+  }
+}
+
+@media (max-width: 772px) {
+  .picture-answers {
+    width: calc(93% + 0.5em);
+  }
+}
+@media (max-width: 730px) {
+  .quest-title {
+    padding: 0.5em 0;
+  }
+  .btn-next {
+    width: 229px;
+    height: 60px;
+  }
+  .btn-next:hover{
+    width: 229px;
+    height: 60px;
+  }
+  .btn-next:active{
+    width: 229px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 710px) {
+  .indicator {
+    top: -75px;
+    left: 32%;
+  }
+}
+
+@media (max-width: 660px) {
+  .result {
+    gap: 0.5em;
+    height: 50%;
+  }
+  .btn-next {
+    width: 134px;
+    height: 55px;
+  }
+  .btn-next:hover{
+    width: 134px;
+    height: 55px;
+  }
+  .btn-next:active{
+    width: 134px;
+    height: 55px;
+  }
+  .picture-answers {
+    width: calc(100% + 0.5em);
+  }
+}
+
+@media (max-width: 490px) {
+  .btn-next {
+    width: 176px;
+    height: 55px;
+  }
+  .btn-next:hover{
+    width: 176px;
+    height: 55px;
+  }
+  .btn-next:active{
+    width: 176px;
+    height: 55px;
+  }
+}
+
